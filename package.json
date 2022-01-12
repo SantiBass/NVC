@@ -1,0 +1,27 @@
+{
+  "name": "the-barbers-chair",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SantiBass/the-barbers-chair.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SantiBass/the-barbers-chair/issues"
+  },
+  "homepage": "https://github.com/SantiBass/the-barbers-chair#readme",
+  "dependencies": {
+    "express": "^4.17.2",
+    "express-handlebars": "^6.0.2",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.3.3"
+  }
+}
