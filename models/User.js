@@ -1,5 +1,4 @@
-const { Model, Datatypes } = require('sequelize');
-const bcrypt = require('bcrypt');
+const { Model, Datatypes, Sequelize } = require('sequelize');
 const sequelize = require('../config/connection');
 
     // creates a User Model and User inherits everything Model has
@@ -26,7 +25,7 @@ User.init(
         },
             // define an username column
         username: {
-            type: Datatypes.STRING,
+            type: Datatypes.STRING(20),
             allowNull: false
         },
             // define an email column
