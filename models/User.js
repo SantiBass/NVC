@@ -1,9 +1,10 @@
 const { Model, Datatypes, Sequelize } = require('sequelize');
+const { Accounts } = require('./Accounts');
 const sequelize = require('../config/connection');
 
     // creates a User Model and User inherits everything Model has
     // this is like a javascript object but its really a mysql dataset
-class User extends Model {
+class User extends Accounts {
 
     // method runs on every user to check password
     checkPassword(loginPw) {
