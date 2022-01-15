@@ -1,37 +1,35 @@
-const { Model, Datatypes } = require('sequelize');
+const { Model, DataTypes } = require('sequelize');
 const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');
 
     // creates a User Model and User inherits everything Model has
     // this is like a javascript object but its really a mysql dataset
 class User extends Model {
-
-    // method runs on every user to check password
-    checkPassword(loginPw) {
-    return bcrypt.compareSync(loginPw, this.password);
-    }
+          // set up method to run on instance data (per user) to check password
+          checkPassword(loginPw) {
+          return bcrypt.compareSync(loginPw, this.password);
+          }
 }
 
-User.init(
-    {
+User.init({
         id: {
             // tell Sequelize what type of data it is
-            type: Datatypes.INTEGER,
+            type: DataTypes.INTEGER,
             // make sure it can't be null
             allowNull: false,
             // this is the primary key
             primaryKey: true,
             // auto increment 
-            autoIncrement: true
+            autoIncrement: true,
         },
             // define an username column
         username: {
-            type: Datatypes.STRING,
-            allowNull: false
+            type: DataTypes.STRING,
+            allowNull: false,
         },
             // define an email column
         email: {
-            type: Datatypes.STRING,
+            type: DataTypes.STRING,
             allowNull: false,
             // make sure theres no duplicates
             unique: true,
@@ -42,21 +40,33 @@ User.init(
         },
             // define password column
         password: {
-            type: Datatypes.STRING,
+            type: DataTypes.STRING,
             allowNull: false,
             // password must be atleast four characters
             validate: {
-                len: [4]
+                len: [6]
             }
         }
     },
     {
+        // hooks: {
+        //   // set up beforeCreate lifecycle "hook" functionality
+        //   async beforeCreate(newUserData) {
+        //     newUserData.password = await bcrypt.hash(newUserData.password, 10);
+        //     return newUserData;
+        //   },
+    
+        // //   async beforeUpdate(updatedUserData) {
+        // //     updatedUserData.password = await bcrypt.hash(updatedUserData.password, 10);
+        // //     return updatedUserData;
+        // //   }
+        // },
         sequelize,
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'user'
-    }
+        modelName: 'customer'
+            }
 );
 
 module.exports = User;
