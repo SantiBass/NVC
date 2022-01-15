@@ -43,11 +43,11 @@ Barber.init(
                 allowNull: false,
                 // password must be atleast four characters
                 validate: {
-                    len: [4]
+                    len: [6]
                 }
             },
             isBarber: {
-                type: DataTypes.STRING,
+                type: DataTypes.BOOLEAN,
                 allowNull: false,
             }
         },
