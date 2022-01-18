@@ -13,7 +13,7 @@ const PORT = process.env.PORT || 5501;
 // turn on the routes
 app.use(routes);
 
-// Sey Handlebbars as the default template engine.
+// Sey Handlebars as the default template engine.
 // app.engine('handlebars', hbs.engine);
 // app.set('view engine', 'handlebars');
 
