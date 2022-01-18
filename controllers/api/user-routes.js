@@ -161,3 +161,7 @@ router.delete('/:id', (req, res) => {
 });
 console.log("works");
 module.exports = router;
+<<<<<<< HEAD
+=======
+
+>>>>>>> 8d55a344806bc9521ce94c89a56a3d16e7a437b2
