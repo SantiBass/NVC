@@ -1,0 +1,22 @@
+
+{{!-- make a new appointment --}}
+<div class="card">
+    <h3 id="new-post" class="card-header">Make an Appointment</h3>
+    <form class="card-body new-post-form" id="new-post-form">
+       
+        <label for="post-title" class="form-label">Enter your / city </label>
+        <input type="text" id="post-title" name="post-title" class="form-input" />
+
+
+        {{!-- <label class="form-label" for="content">Content</label> --}}
+        <label class="form-label" for="content">Enter zip code (optional)</label>
+        <input id="content" name="content" class="form-input" />
+
+        <button type="submit" class="btn">Find Barber</button>
+    </form>
+</div>
+<script src="/javascript/add-post.js"></script>
+{{!-- <div class="card">
+  
+</div>
+<script src="/javascript/add-post.js"></script> --}}
